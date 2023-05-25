@@ -11,10 +11,19 @@ import lombok.Data;
 @Data
 public class UserReqDTO{
 
+    /**
+     * 用户账号
+     */
     private String username;
 
+    /**
+     * 密码
+     */
     private String password;
 
+    /**
+     * 验证码
+     */
     private String checkCode;
 
 }
