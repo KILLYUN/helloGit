@@ -9,23 +9,39 @@
     <description>项目依赖版本管理</description>
     <packaging>pom</packaging>
 
+    <!--需要依赖的jar版本-->
     <properties>
         <java.version>1.8</java.version>
+        <common.version>1.0.0-SNAPSHOT</common.version>
     </properties>
-
 
     <!--需要依赖的jar-->
     <dependencies>
-
+        <dependency>
+            <groupId>com.work.common</groupId>
+            <artifactId>base</artifactId>
+            <version>${common.version}</version>
+        </dependency>
     </dependencies>
 
     <!--需要添加的插件-->
     <build>
         <plugins>
+            <!--maven打包插件-->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>2.7.10</version>
+            </plugin>
+            <!--编译插件-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
             </plugin>
         </plugins>
     </build>
